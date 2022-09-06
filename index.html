@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>Logic Gates</title>
+	</head>
+	<body>
+		<h1>Logic Gates</h1>
+		
+		<div>
+			<h3>AND</h3>
+			<table style="width:200px">
+				<tr>
+					<td><input type="checkbox" id="andcheck1" onclick="andcheck()"></td>
+					<th rowspan="3"><img src="and.gif" alt="AND gate" height="100px" width="200px"></th>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="checkbox" id="andresult"></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="andcheck2" onclick="andcheck()"></td>
+					<td></td>
+				</tr>	
+			</table>
+		</div>
+		
+		<div>
+			<h3>OR</h3>
+			<table style="width:200px">
+				<tr>
+					<td><input type="checkbox" id="orcheck1" onclick="orcheck()"></td>
+					<th rowspan="3"><img src="or.jpg" alt="OR gate" height="100px" width="200px"></th>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="checkbox" id="orresult"></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="orcheck2" onclick="orcheck()"></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div>
+			<h3>NOT</h3>
+			<table style="width:200px">
+				<tr>
+					<td></td>
+					<th rowspan="3"><img src="not.jpg" alt="NOT gate" height="100px" width="200px"></th>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="notcheck1" onclick="notcheck()"></td>
+					<td><input type="checkbox" id="notresult"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+		
+		<script>
+			andcheck()
+			orcheck()
+			notcheck()
+	
+			function andcheck() {
+				if (document.getElementById("andcheck1").checked && document.getElementById("andcheck2").checked) {
+					document.getElementById("andresult").checked = true;
+				} else {
+					document.getElementById("andresult").checked = false;
+				}
+			}
+
+			function orcheck() {
+				if (document.getElementById("orcheck1").checked || document.getElementById("orcheck2").checked) {
+					document.getElementById("orresult").checked = true;
+				} else {
+					document.getElementById("orresult").checked = false;
+				}
+			}
+
+			function notcheck() {
+				if (document.getElementById("notcheck1").checked == false) {
+					document.getElementById("notresult").checked = true;
+				} else {
+					document.getElementById("notresult").checked = false;
+				}
+			}
+		</script>
+	</body>
+</html>
